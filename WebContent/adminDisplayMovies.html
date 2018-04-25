@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- meta tag -->
+        <meta charset="utf-8">
+
+        <!-- style sheets -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <!-- tab details -->
+        <link rel="icon" type="image/png" href="img/cinema.png">
+        <title>Theater</title>
+
+    </head>
+
+    <body>
+      <div class="navbar">
+        <a style = "float:left" href = "homepage.html"> Home </a>
+        <div class="dropdown">
+          <button class="dropbtn"> Profile
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="signIn.html">Sign-In</a>
+            <a href="register.html">Register</a>
+          </div>
+        </div>
+        <a href = "cart.html"> Cart </a>
+        <a href = "bookTickets.html"> Book Tickets </a>
+        <form>
+          <input type="text" placeholder="Search" name="search">
+        </form>
+      </div>
+
+        <div class = "outside">
+          <div class = "table">
+            <h1>Movies</h1>
+              <table>
+                  <tr>
+                      <th>Date</th>
+                      <th>Time</th>
+                      <th>Movie</th>
+                  </tr>
+
+                  <tr>
+                      <td>03/04/0218</td>
+                      <td>18:00</td>
+                      <td>Black Panther</td>
+                      <td>
+                          <form action = "adminMovie" method = "GET">
+                              <button type="submit" name = "edit"> Edit </button><br>
+                              <button type="submit" name = "remove"> Remove </button><br>
+                            </form>
+                      </td>
+                    </tr>
+
+                </table>
+
+            </div>
+            <form action = "adminMovie" method = "GET">
+            	<button type = "submit" name = "add"> Add Movie </button><br>
+            	<button type="submit" name = "options"> Back To Options </button><br>
+            </form>
+          </div>
+
+
+    </body>
+</html>

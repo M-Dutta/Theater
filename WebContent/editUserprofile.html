@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta tag -->
+    <meta charset="utf-8">
+
+    <!-- style sheets -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- tab details -->
+    <link rel="icon" type="image/png" href="img/cinema.png">
+    <title>Theater</title>
+
+</head>
+
+<body>
+  <div class="navbar">
+    <a style = "float:left" href = "homepage.html"> Home </a>
+    <div class="dropdown">
+      <button class="dropbtn"> Profile
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="signIn.html">Sign-In</a>
+        <a href="register.html">Register</a>
+      </div>
+    </div>
+    <a href = "cart.html"> Cart </a>
+    <a href = "bookTickets.html"> Book Tickets </a>
+    <form>
+      <input type="text" placeholder="Search" name="search">
+    </form>
+  </div>
+
+
+    <div class = "outside">
+      <div class = "box">
+    	   <h1> User Profile </h1>
+
+           <form action = "editUserProfile" method = "GET">
+              <h2> Personal </h2>
+              <input class ="i" type = "text" id = "newName" placeholder = "Jake Applebee" > <br>
+              <input class ="i" type = "text" id = "newEmail" placeholder = "japplebee@gmail.com"> <br>
+              <input class ="i" type = "password" id = "newPassword" placeholder = "il0v3apples!"> <br>
+              <h2> Payment Information </h2>
+              <input class ="i" type = "text" id = "newCardNumber" placeholder = "4001 0345 6759 9675"> <br>
+              <input class ="i" type = "text" id = "newExpDate" placeholder = "02/2020"> <br>
+              <input class ="i" type = "text" id = "newCVV" placeholder = "976"> <br>
+              <h2> Billing Information </h2>
+              <input class ="i" type = "text" id ="newBilling" placeholder = "145 Rosewater Ct"> <br>
+              <input class ="i" type = "text" id = "newCity" placeholder = "Fayetteville"> <br>
+              <input class ="i" type = "text" id = "newState" placeholder = "NC"> <br>
+              <input class ="i" type = "text" id = "newZip" placeholder = "37583"> <br><br>
+
+              <button type = "submit" name = "saveUpdate"> Save Information </button> <br>
+
+            </form>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+</body>
+</html>

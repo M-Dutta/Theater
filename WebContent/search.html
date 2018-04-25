@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- meta tag -->
+  <meta charset="utf-8">
+
+  <!-- style sheets -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- tab details -->
+  <link rel="icon" type="image/png" href="img/cinema.png">
+  <title>Theater</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+
+    table
+    {
+      margin: auto;
+      border-spacing: 30px;
+    }
+
+    td
+    {
+      text-align: center;
+    }
+
+    img
+    {
+      width: 300px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a style = "float:left" href = "homepage.html"> Home </a>
+    <div class="dropdown">
+      <button class="dropbtn"> Profile
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="signIn.html">Sign-In</a>
+        <a href="register.html">Register</a>
+      </div>
+    </div>
+    <a href = "cart.html"> Cart </a>
+    <a href = "bookTickets.html"> Book Tickets </a>
+    <form>
+      <input type="text" placeholder="Search" name="search">
+    </form>
+  </div>
+
+  <div class = "outside">
+    <h1> Results for Search ... </h1>
+    <table>
+      <tr>
+        <td>
+          <img src="img/Movies/blackPanther.jpg">
+          <button type="button"> View Details </button>
+          <button type ="button"> Book Tickets </button>
+        </td>
+        <td>
+          <img src="img/Movies/Jumanji.jpg">
+          <button type="button"> View Details </button>
+          <button type ="button"> Book Tickets </button>
+        </td>
+        <td>
+          <img src="img/Movies/everyDay.jpg">
+          <button type="button"> View Details </button>
+          <button type ="button"> Book Tickets </button>
+        </td>
+
+        <td>
+        </td>
+    </table>
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta tag -->
+    <meta charset="utf-8">
+
+    <!-- style sheets -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- tab details -->
+    <link rel="icon" type="image/png" href="img/cinema.png">
+    <title>Theater</title>
+
+    <style>
+
+
+      table
+      {
+        margin: auto;
+        width: 100%;
+      }
+
+      p
+      {
+          margin: auto;
+          font-size:20px;
+      }
+    </style>
+
+</head>
+
+<body>
+  <div class="navbar">
+    <a style = "float:left" href = "homepage.html"> Home </a>
+    <div class="dropdown">
+      <button class="dropbtn"> Profile
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="signIn.html">Sign-In</a>
+        <a href="register.html">Register</a>
+      </div>
+    </div>
+    <a href = "cart.html"> Cart </a>
+    <a href = "bookTickets.html"> Book Tickets </a>
+    <form>
+      <input type="text" placeholder="Search" name="search">
+    </form>
+  </div>
+
+    <div class = "outside">
+      <div class = "otherBox">
+    	   <h1> Black Panther  </h1>
+           <table>
+             <tr>
+               <td>
+                 <img src = "img/blackPanther.jpg" alt = "movie poster"> <br>
+                 <form action = "viewDetails" method = "GET">
+                 	<button type = "submit" name = "bookTickets"> Book Tickets </button>
+                 </form>
+               </td>
+
+              <td>
+                <p> Movie Description </p> <br>
+                <p> Action </p> <br>
+                <p> 2h 14m | PG-13 </p>
+              </td>
+            </tr>
+          </table>
+
+         </div>
+       </div>
+
+</body>
+</html>

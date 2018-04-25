@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta tag -->
+    <meta charset="utf-8">
+
+    <!-- style sheets -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- tab details -->
+    <link rel="icon" type="image/png" href="img/cinema.png">
+    <title>Theater</title>
+
+</head>
+
+<body>
+  <div class="navbar">
+    <a style = "float:left" href = "homepage.html"> Home </a>
+    <div class="dropdown">
+      <button class="dropbtn"> Profile
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="signIn.html">Sign-In</a>
+        <a href="register.html">Register</a>
+      </div>
+    </div>
+    <a href = "cart.html"> Cart </a>
+    <a href = "bookTickets.html"> Book Tickets </a>
+    <form>
+      <input type="text" placeholder="Search" name="search">
+    </form>
+  </div>
+
+
+    <div class = "outside">
+      <div class = "table">
+      	<h1> Cart </h4>
+        <table>
+          <tr>
+            <th> Date </th>
+            <th> Time </th>
+            <th> Movie Title </th>
+            <th> Seat Number </th>
+            <th> Ticket Type </th>
+            <th> Price </th>
+          </tr>
+
+          <tr>
+            <td> 3/6/2018 </td>
+            <td> 7:45 PM </td>
+            <td> Black Panther </td>
+            <td> 14 </td>
+            <td> Adult </td>
+            <td> $11.50 </td>
+            <td> <button type = "button"> Remove </button> </td>
+          </tr>
+
+          <tr>
+            <td> 3/6/2018 </td>
+            <td> 7:45 PM </td>
+            <td> Black Panther </td>
+            <td> 15 </td>
+            <td> Adult </td>
+            <td> $11.50  </td>
+            <td> <button type = "button"> Remove </button> </td>
+          </tr>
+
+        </table>
+
+      <p> Total: $23.92 </p>
+     
+
+    </div>
+    <form action = "cart" method = "GET">
+    	<button type = "submit" name = "browse"> Back To Browse </button>
+    	<button type = "submit" name = "checkout"> Continue To Checkout </button>
+    </form>
+  </div>
+
+
+</body>
+</html>

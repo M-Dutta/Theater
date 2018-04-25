@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>servlets.registerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SignInServlet</servlet-name>
+    <servlet-class>servlets.signInServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignInServlet</servlet-name>
+    <url-pattern> /signIn </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminLoginServlet</servlet-name>
+    <servlet-class>servlets.AdminLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminLoginServlet</servlet-name>
+    <url-pattern> /adminLogin </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ManagerLoginServlet</servlet-name>
+    <servlet-class>servlets.ManagerLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManagerLoginServlet</servlet-name>
+    <url-pattern> /managerLogin </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ResetServlet</servlet-name>
+    <servlet-class>servlets.ResetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResetServlet</servlet-name>
+    <url-pattern> /resetPass </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>VerifyEmailServlet</servlet-name>
+    <servlet-class>servlets.VerifyEmailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VerifyEmailServlet</servlet-name>
+    <url-pattern> /verifyEmail </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AccountConfirmationServlet</servlet-name>
+    <servlet-class>servlets.AccountConfirmationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AccountConfirmationServlet</servlet-name>
+    <url-pattern> /accountConfirmation</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>UserProfileServlet</servlet-name>
+    <servlet-class>servlets.userProfileServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserProfileServlet</servlet-name>
+    <url-pattern> /userProfile </url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserProfileServlet</servlet-name>
+    <url-pattern> /purchaseHistory </url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserProfileServlet</servlet-name>
+    <url-pattern> /editUserProfile </url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserProfileServlet</servlet-name>
+    <url-pattern> /editEmailPreferences </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>servlets.logoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern> /logout </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>HomepageServlet</servlet-name>
+    <servlet-class>servlets.homepageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomepageServlet</servlet-name>
+    <url-pattern> /homepage </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ViewDetailsServlet</servlet-name>
+    <servlet-class>servlets.viewDetailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewDetailsServlet</servlet-name>
+    <url-pattern> /viewDetails </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>BookTicketsServlet</servlet-name>
+    <servlet-class>servlets.bookTicketsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookTicketsServlet</servlet-name>
+    <url-pattern> /bookTickets </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ChooseSeatsServlet</servlet-name>
+    <servlet-class>servlets.chooseSeatsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChooseSeatsServlet</servlet-name>
+    <url-pattern> /chooseSeats </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>servlets.cartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern> /cart </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CheckoutServlet</servlet-name>
+    <servlet-class>servlets.checkoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckoutServlet</servlet-name>
+    <url-pattern> /checkout </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>OrderConfirmationServlet</servlet-name>
+    <servlet-class>servlets.orderConfirmationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrderConfirmationServlet</servlet-name>
+    <url-pattern> /orderConfirmation </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminEmployeeServlet</servlet-name>
+    <servlet-class>servlets.AdminEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminEmployeeServlet</servlet-name>
+    <url-pattern> /adminEmployee </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminMovieServlet</servlet-name>
+    <servlet-class>servlets.AdminMovieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminMovieServlet</servlet-name>
+    <url-pattern> /adminMovie </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminOptionsServlet</servlet-name>
+    <servlet-class>servlets.AdminOptionsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminOptionsServlet</servlet-name>
+    <url-pattern> /adminOptions </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminPromoServlet</servlet-name>
+    <servlet-class>servlets.AdminPromoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminPromoServlet</servlet-name>
+    <url-pattern> /adminPromo </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminReportServlet</servlet-name>
+    <servlet-class>servlets.AdminReportServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminReportServlet</servlet-name>
+    <url-pattern> /adminReport </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminUserServlet</servlet-name>
+    <servlet-class>servlets.AdminUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminUserServlet</servlet-name>
+    <url-pattern> /adminUser </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>EditUserServlet</servlet-name>
+    <servlet-class>servlets.EditUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditUserServlet</servlet-name>
+    <url-pattern> /editUser </url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>EditUserServlet</servlet-name>
+    <url-pattern> /addUser </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>EditPromoServlet</servlet-name>
+    <servlet-class>servlets.EditPromoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditPromoServlet</servlet-name>
+    <url-pattern> /editPromo </url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>EditPromoServlet</servlet-name>
+    <url-pattern> /addPromo </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>EditMovieServlet</servlet-name>
+    <servlet-class>servlets.EditMovieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditMovieServlet</servlet-name>
+    <url-pattern> /editMovie </url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>EditMovieServlet</servlet-name>
+    <url-pattern> /addMovie </url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>EditEmployeeServlet</servlet-name>
+    <servlet-class>servlets.EditEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditEmployeeServlet</servlet-name>
+    <url-pattern> /editEmployee </url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EditEmployeeServlet</servlet-name>
+    <url-pattern> /addEmployee </url-pattern>
+  </servlet-mapping>
+ 
+ 
+</web-app>

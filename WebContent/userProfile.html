@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta tag -->
+    <meta charset="utf-8">
+
+    <!-- style sheets -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- tab details -->
+    <link rel="icon" type="image/png" href="img/cinema.png">
+    <title>Theater</title>
+
+    <style>
+
+    .profile
+    {
+      text-align: center;
+      border-style: solid;
+      border-width: 3px;
+      border-color: white;
+      border-radius: 10px;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      width: 70%;
+      margin: auto;
+      margin-top: 30px;
+      column-count: 2;
+    }
+
+    .profile button
+    {
+      background-color: black;
+      font-size: 16px;
+      border: 1px solid white;
+      border-radius: 10px;
+      width: 70%;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .profile button:hover
+    {
+      background-color: white;
+      color: black;
+    }
+
+    p
+    {
+      text-align: left;
+    }
+
+
+    </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <a style = "float:left" href = "homepage.html"> Home </a>
+    <div class="dropdown">
+      <button class="dropbtn"> Profile
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="signIn.html">Sign-In</a>
+        <a href="register.html">Register</a>
+      </div>
+    </div>
+    <a href = "cart.html"> Cart </a>
+    <a href = "bookTickets.html"> Book Tickets </a>
+    <form>
+      <input type="text" placeholder="Search" name="search">
+    </form>
+  </div>
+
+    <div class = "outside">
+      <div class = "profile">
+         <h1> User Profile </h1>
+         <br> <br>
+         <form action = "userProfile" method = "GET">
+         	<button type = "submit" name = "update"> Update Information </button>
+        	<button type = "submit" name = "email"> Email Preferences </button>
+         	<button type = "submit" name = "history"> Purchase History </button>
+         </form>
+
+         <br><br>
+         <br><br>
+         <br><br>
+         <br><br>
+
+         <p>
+           Name: Jake Applebee <br><br>
+           Email: japplebee@gmail.com <br><br>
+           Password: il0v3apples! <br><br>
+           Payment Information: Card ending in 9675 <br><br>
+           Billing Information: 145 Rosewater Ct, Fayetteville NC, 37583 <br><br>
+         </p>
+      </div>
+
+    </div>
+
+</body>
+</html>
