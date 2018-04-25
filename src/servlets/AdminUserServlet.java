@@ -29,6 +29,7 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 	}
 	if (request.getParameter("remove") != null)
 	{	
+		//drop from user where 
 	}
 	if (request.getParameter("add") != null)
 	{

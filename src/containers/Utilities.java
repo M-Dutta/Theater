@@ -29,7 +29,7 @@ public final  static String user = "root";
 public final static String pswd = "root"; 
 public final  static String DBname = "movie_theater?useSSL=false"; 
 public final  static String Driver ="com.mysql.jdbc.Driver";
-public final static  String connectionURL ="jdbc:mysql://localhost:8000/";
+public final static  String connectionURL ="jdbc:mysql://localhost:3306/";
 public  static Statement stmt = null;
 public  static Connection con = null;
 
