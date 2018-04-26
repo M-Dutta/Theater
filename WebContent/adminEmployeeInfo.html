@@ -11,10 +11,10 @@
         <link rel="icon" type="image/png" href="img/cinema.png">
         <title>Theater</title>
 
+
     </head>
 
     <body>
-
       <div class="navbar">
         <a style = "float:left" href = "homepage.html"> Home </a>
         <div class="dropdown">
@@ -34,15 +34,36 @@
       </div>
 
         <div class = "outside">
-            <form class="box" action="adminOptions" method="GET">
-                <h1>Admin Options</h1>
-                <button type="submit" name = "movie"> Movies</button><br>
-                <button type="submit" name = "user"> Users</button><br>
-                <button type="submit" name = "employee"> Employees</button><br>
-                <button type="submit" name = "promo"> Promo Codes</button><br>
-                <button type="submit" name = "reports"> Reports </button><br>
-            </form>
+          <div class = "table">
+            <h1>Employees</h1>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                </tr>
+
+                <tr>
+                    <td>John Doe</td>
+                    <td>johndoe@email.com</td>
+                    <td>12345678</td>
+                    <td>
+                        <form action = "adminEmployee" method = "GET">
+                            <button type="submit" name = "edit">Edit</button><br>
+                            <button type="submit" name = "remove">Remove</button><br>
+                        </form>
+                    </td>
+                </tr>
+
+            </table>
+
+
         </div>
+        <form action = "adminEmployee" method = "GET">
+        	<button type = "submit" name = "add"> Add Employee </button><br>
+        	<button type="submit" name = "options"> Back To Options </button><br>
+		</form>
+      </div>
 
     </body>
 </html>

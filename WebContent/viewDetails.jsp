@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page contentType = "text/html;charset=UTF-8" import = "beanies.*" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <html lang="en">
 <head>
     <!-- meta tag -->
@@ -30,6 +32,8 @@
 </head>
 
 <body>
+<jsp:useBean id = "mov" class = "beanies.MovieList" scope = "request"></jsp:useBean>
+
   <div class="navbar">
     <a style = "float:left" href = "homepage.html"> Home </a>
     <div class="dropdown">
@@ -41,8 +45,7 @@
         <a href="register.html">Register</a>
       </div>
     </div>
-    <a href = "cart.html"> Cart </a>
-    <a href = "bookTickets.html"> Book Tickets </a>
+
     <form>
       <input type="text" placeholder="Search" name="search">
     </form>
@@ -50,23 +53,28 @@
 
     <div class = "outside">
       <div class = "otherBox">
-    	   <h1> Black Panther  </h1>
+     	<c:forEach items = "${mov.movieList}" var = "mov">
+     	${name}
+     	 <c:if test = "${mov.movieName == 'Black Panther'}"> 
+    	   <h1>${mov.movieName}</h1>
            <table>
              <tr>
                <td>
-                 <img src = "img/blackPanther.jpg" alt = "movie poster"> <br>
+                 <img src = "${mov.pic}" alt = "movie poster"> <br>
                  <form action = "viewDetails" method = "GET">
-                 	<button type = "submit" name = "bookTickets"> Book Tickets </button>
+                 	<button type = "submit" name = "bookTickets" value = "${mov.movieName}"> Book Tickets </button>
                  </form>
                </td>
 
               <td>
-                <p> Movie Description </p> <br>
-                <p> Action </p> <br>
-                <p> 2h 14m | PG-13 </p>
+                <p> ${mov.description} </p> <br>
+                <p> ${mov.genre} </p> <br>
+                <p> ${mov.length} </p>
               </td>
             </tr>
           </table>
+		</c:if>
+          </c:forEach>
 
          </div>
        </div>

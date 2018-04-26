@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page contentType = "text/html;charset=UTF-8" import = "beanies.*" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
   <!-- meta tag -->
@@ -26,55 +28,45 @@
       text-align: center;
     }
 
-    img
-    {
-      width: 300px;
-    }
+
 
   </style>
 </head>
 <body>
+<jsp:useBean id = "mov" class = "beanies.MovieList" scope = "request"></jsp:useBean>
 
   <div class="navbar">
     <a style = "float:left" href = "homepage.html"> Home </a>
     <div class="dropdown">
-      <button class="dropbtn"> Profile
+      <button class="dropbtn"> User
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="signIn.html">Sign-In</a>
-        <a href="register.html">Register</a>
+        <a href="signIn.html">Profile</a>
+        <a href="signIn.html">Logout</a>
       </div>
     </div>
-    <a href = "cart.html"> Cart </a>
-    <a href = "bookTickets.html"> Book Tickets </a>
+    
     <form>
       <input type="text" placeholder="Search" name="search">
     </form>
   </div>
 
   <div class = "outside">
-    <h1> Results for Search ... </h1>
     <table>
       <tr>
+      	<c:forEach items = "${mov.movieList}" var = "mov">
+   
         <td>
-          <img src="img/Movies/blackPanther.jpg">
-          <button type="button"> View Details </button>
-          <button type ="button"> Book Tickets </button>
+        <img src="${mov.pic}">
+ 		<form action = "homepage" method = "GET">
+        	<button type = "submit" name = "viewDetails" value = "${mov.movieName}"> View Details </button>
+        	<button type = "submit" name = "bookTickets" value = "${mov.movieName}"> Book Tickets </button>
+      	</form>
         </td>
-        <td>
-          <img src="img/Movies/Jumanji.jpg">
-          <button type="button"> View Details </button>
-          <button type ="button"> Book Tickets </button>
-        </td>
-        <td>
-          <img src="img/Movies/everyDay.jpg">
-          <button type="button"> View Details </button>
-          <button type ="button"> Book Tickets </button>
-        </td>
+        </c:forEach>
+       </tr>
 
-        <td>
-        </td>
     </table>
   </div>
 

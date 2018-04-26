@@ -11,7 +11,7 @@
         <link rel="icon" type="image/png" href="img/cinema.png">
         <title>Theater</title>
 
-        
+
     </head>
 
 
@@ -35,19 +35,40 @@
       </div>
 
 
-        <div class="outside">
-          <form class ="box" action = "editEmployee" method = "GET">
-            <h1> Edit Employee </h1>
-            <input class = "i" type="text" placeholder="Name" name = "Name">
-            <input class = "i" type="text" placeholder="Email" name = "Email">
-            <input class = "i" type="text" placeholder="Password" name = "Password"><br>
-            <button type="submit" name = "save"> Save </button>
-            <button type = "submit" name = "back"> Back to Employees List </button><br>
-          </form>
+        <div class = "outside">
+          <div class = "table">
+            <h1>Reports</h1>
+            <table>
+              <tr>
+                <th>Ticket #</th>
+                <th>Movie</th>
+                <th>Date</th>
+                <th>Time</th>
 
-      
+              </tr>
 
-        </div>
+              <tr>
+                <td>1234</td>
+                <td>Black Panther</td>
+                <td>03/04/0218</td>
+                <td>18:00</td>
+                <td>
+                  <form action="adminReport" method="GET">
+                    <button type="submit" name = "refund"> Refund </button><br>
+                  </form>
+                </td>
+
+              </tr>
+
+            </table>
+
+
+
+          </div>
+       	<form action = "adminReport" method = "GET">
+          <button type = "submit" name = "options"> Back to Options </button><br>
+		</form>
+      </div>
 
 
     </body>

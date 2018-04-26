@@ -11,9 +11,8 @@
         <link rel="icon" type="image/png" href="img/cinema.png">
         <title>Theater</title>
 
-        
-    </head>
 
+    </head>
 
     <body>
       <div class="navbar">
@@ -35,20 +34,36 @@
       </div>
 
 
-        <div class="outside">
-          <form class ="box" action = "editEmployee" method = "GET">
-            <h1> Edit Employee </h1>
-            <input class = "i" type="text" placeholder="Name" name = "Name">
-            <input class = "i" type="text" placeholder="Email" name = "Email">
-            <input class = "i" type="text" placeholder="Password" name = "Password"><br>
-            <button type="submit" name = "save"> Save </button>
-            <button type = "submit" name = "back"> Back to Employees List </button><br>
-          </form>
+        <div class = "outside">
+          <div class = "table">
+          <h1>Users</h1>
+          <table>
+            <tr>
+              <th>User Name</th>
+              <th>Email</th>
+              <th>Password</th>
 
-      
+            </tr>
 
+            <tr>
+                <td>person123</td>
+                <td>person@email.com</td>
+                <td>12345678</td>
+                <td>
+                  <form action= "adminUser" method="GET">
+                    <button type="submit" name = "edit">Edit</button><br>
+                    <button type="submit" name = "remove">Remove</button><br>
+                    </form>
+                  </td>
+            </tr>
+          </table>
+
+        
         </div>
-
-
+        <form action= "adminUser" method="GET">
+        	<button type = "submit" name = "add"> Add User </button><br>
+        	<button type = "submit" name = "options"> Back to Options </button><br>
+		</form>
+      </div>
     </body>
 </html>

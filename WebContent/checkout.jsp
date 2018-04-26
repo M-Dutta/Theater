@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page contentType = "text/html;charset=UTF-8" import = "beanies.*" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <html lang="en">
 <head>
     <!-- meta tag -->
@@ -64,8 +66,7 @@
         <a href="register.html">Register</a>
       </div>
     </div>
-    <a href = "cart.html"> Cart </a>
-    <a href = "bookTickets.html"> Book Tickets </a>
+    
     <form>
       <input type="text" placeholder="Search" name="search">
     </form>
@@ -92,16 +93,16 @@
             </td>
 
             <td style = "width: 200px">
-              <p class = "p"> Black Panther </p> <br>
-              <p class = "p"> 3/6/2018 7:45 PM </p> <br>
-              <p class = "p"> 2 Adult Tickets </p> <br>
+              <p class = "p"> ${name} </p> <br>
+              <p class = "p"> ${seat} </p> <br>
+              <p class = "p"> ${type} </p> <br>
 
             </td>
           </tr>
 
         </table>
 
-        <p> Total: $23.92 </p>
+        <p> Total: $10 </p>
         <form action = "checkout" method = "GET">
         	<button type = "submit" name = "order"> Place Order </button>
        		<button type = "submit" name = "cancel"> Cancel Order </button>

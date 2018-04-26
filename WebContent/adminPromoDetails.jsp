@@ -1,4 +1,4 @@
-<%@ page contentType = "text/html;charset=UTF-8" "beanies.*" %>
+<%@ page contentType = "text/html;charset=UTF-8" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 <html lang="en">
@@ -29,7 +29,8 @@
             <a href="register.html">Register</a>
           </div>
         </div>
-        
+        <a href = "cart.html"> Cart </a>
+        <a href = "bookTickets.html"> Book Tickets </a>
         <form>
           <input type="text" placeholder="Search" name="search">
         </form>

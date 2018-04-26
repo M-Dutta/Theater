@@ -14,7 +14,6 @@
     </head>
 
     <body>
-
       <div class="navbar">
         <a style = "float:left" href = "homepage.html"> Home </a>
         <div class="dropdown">
@@ -34,15 +33,36 @@
       </div>
 
         <div class = "outside">
-            <form class="box" action="adminOptions" method="GET">
-                <h1>Admin Options</h1>
-                <button type="submit" name = "movie"> Movies</button><br>
-                <button type="submit" name = "user"> Users</button><br>
-                <button type="submit" name = "employee"> Employees</button><br>
-                <button type="submit" name = "promo"> Promo Codes</button><br>
-                <button type="submit" name = "reports"> Reports </button><br>
+          <div class = "table">
+            <h1>Movies</h1>
+              <table>
+                  <tr>
+                      <th>Date</th>
+                      <th>Time</th>
+                      <th>Movie</th>
+                  </tr>
+
+                  <tr>
+                      <td>03/04/0218</td>
+                      <td>18:00</td>
+                      <td>Black Panther</td>
+                      <td>
+                          <form action = "adminMovie" method = "GET">
+                              <button type="submit" name = "edit"> Edit </button><br>
+                              <button type="submit" name = "remove"> Remove </button><br>
+                            </form>
+                      </td>
+                    </tr>
+
+                </table>
+
+            </div>
+            <form action = "adminMovie" method = "GET">
+            	<button type = "submit" name = "add"> Add Movie </button><br>
+            	<button type="submit" name = "options"> Back To Options </button><br>
             </form>
-        </div>
+          </div>
+
 
     </body>
 </html>
