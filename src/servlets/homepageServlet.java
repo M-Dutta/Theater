@@ -25,11 +25,18 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 	
 	if (request.getParameter("viewDetails") != null)
 	{
-		response.sendRedirect("viewDetails.html");	
+		String movieName = request.getParameter("viewDetails");
+		request.setAttribute("name", movieName);
+		request.getRequestDispatcher("viewDetails.jsp").forward(request, response);
+		
+	
 	}
 	if (request.getParameter("bookTickets") != null)
 	{
-		response.sendRedirect("bookTickets.html");	
+		String movieName = request.getParameter("viewDetails");
+		request.setAttribute("name", movieName);
+		request.getRequestDispatcher("bookTickets.jsp").forward(request, response);
+		
 	}
 }
 }

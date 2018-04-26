@@ -4,14 +4,23 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
+import java.util.ArrayList;
 
 public class Movie {
 	String l = "'";
 	String L = "','";
-	String movie_id;
 	String movie_name;
 	Time runtim;
+	String trailer_picture;
+	int id;
+	String movie_id;
+	String description;
+	String genre;
+	int rating;
+	ArrayList<String> showtimes = new ArrayList<String>();
 	Date releas;
+	
+	
 	
 	public Movie() {}
 	
@@ -46,14 +55,39 @@ public class Movie {
 		this.movie_name = string;
 	}
 	
-	public void setDate(Date date)
-	{
-		this.releas = date;
-	}
-	
-	public void setTime(Time time)
+	public void setLength(Time time)
 	{
 		this.runtim = time;
+	}
+	
+	public void setPic(String pic)
+	{
+		this.trailer_picture = pic;
+	}
+	
+	public void setId(int num)
+	{
+		this.id = num;
+	}
+	
+	public void setDescription(String string)
+	{
+		this.description = string;
+	}
+	
+	public void setGenre(String string)
+	{
+		this.genre = string;
+	}
+	
+	public void setRating(int num)
+	{
+		this.rating = num;
+	}
+	
+	public void setShowtimeList(ArrayList<String> list)
+	{
+		this.showtimes = list;
 	}
 	
 	public String getMovieName()
@@ -61,14 +95,39 @@ public class Movie {
 		return this.movie_name;
 	}
 	
-	public Date getDate()
-	{
-		return this.releas;
-	}
-	
-	public Time getTime()
+	public Time getLength()
 	{
 		return this.runtim;
+	}
+	
+	public String getPic()
+	{
+		return this.trailer_picture;
+	}
+	
+	public int getId()
+	{
+		return this.id;
+	}
+	
+	public String getDescription()
+	{
+		return this.description;
+	}
+	
+	public String getGenre()
+	{
+		return this.genre;
+	}
+	
+	public int getRating()
+	{
+		return this.rating;
+	}
+	
+	public ArrayList<String> getShowtimeList()
+	{
+		return this.showtimes;
 	}
 	
 	public void add(Statement s) 

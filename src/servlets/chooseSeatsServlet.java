@@ -27,9 +27,15 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 	{
 		response.sendRedirect("homepage.html");	
 	}
-	if (request.getParameter("cart") != null)
+	if (request.getParameter("checkout") != null)
 	{
-		response.sendRedirect("cart.html");
+		String movieName = request.getParameter("checkout");
+		String seatNum = request.getParameter("seat");
+		String seatType = request.getParameter("seatType");
+		request.setAttribute("name", movieName);
+		request.setAttribute("seat", seatNum);
+		request.setAttribute("type", seatType);
+		request.getRequestDispatcher("checkout.jsp").forward(request, response);
 	}
 }
 }

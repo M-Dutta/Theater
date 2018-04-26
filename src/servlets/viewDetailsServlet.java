@@ -25,7 +25,9 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 	
 	if (request.getParameter("bookTickets") != null)
 	{
-		response.sendRedirect("bookTickets.html");	
+		String movieName = request.getParameter("bookTickets");
+		request.setAttribute("name", movieName);
+		request.getRequestDispatcher("bookTickets.jsp").forward(request, response);
 	}
 
 }

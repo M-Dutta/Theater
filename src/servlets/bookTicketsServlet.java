@@ -23,9 +23,11 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 	
 	response.setContentType("text/html; charset=UTF-8");
 	
-	if (request.getParameter("seats") != null)
+	if (request.getParameter("show") != null)
 	{
-		response.sendRedirect("chooseSeats.html");	
+		String movieName = request.getParameter("show");
+		request.setAttribute("name", movieName);
+		request.getRequestDispatcher("chooseSeats.jsp").forward(request, response);
 	}
 	
 }

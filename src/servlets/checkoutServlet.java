@@ -29,7 +29,7 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 	}
 	if (request.getParameter("cancel") != null)
 	{
-		response.sendRedirect("cart.html");	
+		response.sendRedirect("homepage.jsp");	
 	}
 }
 }
