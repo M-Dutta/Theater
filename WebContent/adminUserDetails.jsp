@@ -1,4 +1,4 @@
-<%@ page contentType = "text/html;charset=UTF-8" %>
+<%@ page contentType = "text/html;charset=UTF-8" import = "beanies.*" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 <html lang="en">
@@ -17,7 +17,7 @@
     </head>
 
     <body>
-    <jsp:useBean id = "bean" class = "beanies.UserList" scope = "session"></jsp:useBean>
+    <jsp:useBean id = "usr" class = "beanies.UserList" scope = "request"></jsp:useBean>
     
       <div class="navbar">
         <a style = "float:left" href = "homepage.html"> Home </a>
@@ -49,22 +49,20 @@
 
             </tr>
 
-			<c:forEach items = "${bean.userList}" var = "user">
+			<c:forEach items = "${usr.userList}" var = "user">
             <tr>
-                <td> "${user.email}"</td>
-                <td> "${user.firstName}"</td>
-                <td> "${user.lastName}"</td>
+                <td> ${user.email}</td>
+                <td> ${user.firstName}</td>
+                <td> ${user.lastName}</td>
                	<td>
-                  <form action= "adminUser" method="GET">'
-                    <button type="submit" name = "edit" id = "${user.email}">Edit</button><br>
-                    <button type="submit" name = "remove" id = "${user.email}">Remove</button><br>
+                  <form action= "adminUser" method="GET">
+                    <button type="submit" name = "edit" value = "${user.email}">Edit</button><br>
+                    <button type="submit" name = "remove" value = "${user.email}">Remove</button><br>
                   </form>
                 </td>
             </tr>
             </c:forEach>
           </table>
-
-        
         </div>
         <form action= "adminUser" method="GET">
         	<button type = "submit" name = "add"> Add User </button><br>

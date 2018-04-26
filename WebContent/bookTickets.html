@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta tag -->
+    <meta charset="utf-8">
+
+    <!-- style sheets -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- tab details -->
+    <link rel="icon" type="image/png" href="img/cinema.png">
+    <title>Theater</title>
+
+</head>
+
+<body>
+  <div class="navbar">
+    <a style = "float:left" href = "homepage.html"> Home </a>
+    <div class="dropdown">
+      <button class="dropbtn"> Profile
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="signIn.html">Sign-In</a>
+        <a href="register.html">Register</a>
+      </div>
+    </div>
+    <a href = "cart.html"> Cart </a>
+    <a href = "bookTickets.html"> Book Tickets </a>
+    <form>
+      <input type="text" placeholder="Search" name="search">
+    </form>
+  </div>
+
+    <div class = "otherBox">
+    	<h1> Black Panther </h1>
+      <h2> 2h 14m | PG-13 </h2>
+      <br> <br>
+      <table>
+        <tr>
+          <td style = "width = 300">
+            <h3> March 6th, 2018 </h3>
+            <input type = "button" id = "time1" value = "3:00 PM">
+            <input type = "button" id = "time2" value = "5:30 PM">
+            <input type = "button" id = "time3" value = "7:45 PM">
+            <input type = "button" id = "time4" value = "10:00 PM">
+            
+            <h4> March 7th, 2018 </h4>
+            <input type = "button" id = "time1" value = "4:45 PM">
+            <input type = "button" id = "time2" value = "7:00 PM">
+            <input type = "button" id = "time3" value = "9:30 PM">
+          </td>
+          <td>
+              <img src = "img/blackPanther.jpg" alt = "movie poster" >
+          </td>
+        </tr>
+
+      
+
+      </table>
+
+
+    <br> <br>
+		
+	<form action = "bookTickets" method = "GET">
+      <button type = "submit" name = "seats"> Choose Seats </button>
+	</form>
+
+
+    </div>
+
+    
+</body>
+</html>

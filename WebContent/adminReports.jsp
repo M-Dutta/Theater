@@ -1,4 +1,4 @@
-<%@ page contentType = "text/html;charset=UTF-8" %>
+<%@ page contentType = "text/html;charset=UTF-8" import = "beanies.*" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 <html lang="en">
@@ -18,7 +18,7 @@
 
 
     <body>
-    <jsp:useBean id = "bean" class = "beanies.ReportList" scope = "session"></jsp:useBean>
+    <jsp:useBean id = "rep" class = "beanies.ReportList" scope = "session"></jsp:useBean>
     
       <div class="navbar">
         <a style = "float:left" href = "homepage.html"> Home </a>
@@ -51,7 +51,7 @@
 
               </tr>
 				
-			  <c:forEach items = "${bean.reportList}" var = "ticket">
+			  <c:forEach items = "${beanies.reportList}" var = "ticket">
               <tr>
                 <td>"${ticket.id}"</td>
                 <td>"${ticet.movie}"</td>

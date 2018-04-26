@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ page contentType = "text/html;charset=UTF-8" import = "beanies.*" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
     <head>
         <!-- meta tag -->
@@ -11,12 +12,13 @@
         <link rel="icon" type="image/png" href="img/cinema.png">
         <title>Theater</title>
 
+
+
     </head>
 
     <body>
-
       <div class="navbar">
-        <a style = "float:left" href = "homepage.jsp"> Home </a>
+        <a style = "float:left" href = "homepage.html"> Home </a>
         <div class="dropdown">
           <button class="dropbtn"> Profile
             <i class="fa fa-caret-down"></i>
@@ -33,15 +35,19 @@
         </form>
       </div>
 
+
         <div class = "outside">
-            <form class="box" action="adminOptions" method="GET">
-                <h1>Admin Options</h1>
-                <button type="submit" name = "movie"> Movies</button><br>
-                <button type="submit" name = "user"> Users</button><br>
-                <button type="submit" name = "employee"> Employees</button><br>
-                <button type="submit" name = "promo"> Promo Codes</button><br>
-                <button type="submit" name = "reports"> Reports </button><br>
-            </form>
+          <form class="box" action = "editPromo" method = "GET">
+            <h1> Edit Promo </h1>
+            <input class = "i" type="text" placeholder="Code" name = "promo" value = "${promo}" readOnly>
+            <input class = "i" type="text" placeholder="Discount" name = "discount" value = "${discount}">
+            <input class = "i" type="text" placeholder="End Date" name ="exp" value = "${exp}"><br>
+            <button type = "submit" name = "save"> Save </button>
+            <button type = "submit" name = "back"> Back to Promos List </button><br>
+          </form>
+
+    
+
         </div>
 
     </body>

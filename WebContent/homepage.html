@@ -1,6 +1,4 @@
-<%@ page contentType = "text/html;charset=UTF-8" import = "beanies.*" %>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-
+<!DOCTYPE html>
 <html>
 <head>
   <!-- meta tag -->
@@ -33,10 +31,9 @@
   </style>
 </head>
 <body>
-<jsp:useBean id = "mov" class = "beanies.MovieList" scope = "request"></jsp:useBean>
 
   <div class="navbar">
-    <a style = "float:left" href = "homepage.jsp"> Home </a>
+    <a style = "float:left" href = "homepage.html"> Home </a>
     <div class="dropdown">
       <button class="dropbtn"> User
         <i class="fa fa-caret-down"></i>
@@ -46,7 +43,8 @@
         <a href="signIn.html">Logout</a>
       </div>
     </div>
-    
+    <a href = "cart.html"> Cart </a>
+    <a href = "bookTickets.html"> Book Tickets </a>
     <form>
       <input type="text" placeholder="Search" name="search">
     </form>
@@ -55,18 +53,26 @@
   <div class = "outside">
     <table>
       <tr>
-      	<c:forEach items = "${mov.movieList}" var = "mov">
-   
         <td>
-        <img src="${mov.pic}">
+        <img src="img/blackPanther.jpg">
  		<form action = "homepage" method = "GET">
-        	<button type = "submit" name = "viewDetails" value = "${mov.movieName}"> View Details </button>
-        	<button type = "submit" name = "bookTickets" value = "${mov.movieName}"> Book Tickets </button>
+        	<button type = "submit" name = "viewDetails"> View Details </button>
+        	<button type = "submit" name = "bookTickets"> Book Tickets </button>
       	</form>
         </td>
-        </c:forEach>
-       </tr>
+        <td>
+          <img src="img/Jumanji.jpg">
+          <button type="submit"> View Details </button>
+          <button type ="submit"> Book Tickets </button>
+        </td>
+        <td>
+          <img src="img/everyDay.jpg">
+          <button type="submit"> View Details </button>
+          <button type ="submit"> Book Tickets </button>
+        </td>
 
+        <td>
+        </td>
     </table>
   </div>
 

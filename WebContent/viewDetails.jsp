@@ -54,7 +54,6 @@
     <div class = "outside">
       <div class = "otherBox">
      	<c:forEach items = "${mov.movieList}" var = "mov">
-     	${name}
      	 <c:if test = "${mov.movieName == 'Black Panther'}"> 
     	   <h1>${mov.movieName}</h1>
            <table>

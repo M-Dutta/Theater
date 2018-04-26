@@ -1,4 +1,4 @@
-<%@ page contentType = "text/html;charset=UTF-8" %>
+<%@ page contentType = "text/html;charset=UTF-8" import = "beanies.*" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
     <head>
@@ -15,7 +15,7 @@
     </head>
 
     <body>
-    <jsp:useBean id = "bean" class = "beanies.MovieList" scope = "session"></jsp:useBean>
+    <jsp:useBean id = "mov" class = "beanies.MovieList" scope = "request"></jsp:useBean>
     
       <div class="navbar">
         <a style = "float:left" href = "homepage.html"> Home </a>
@@ -40,20 +40,20 @@
             <h1>Movies</h1>
               <table>
                   <tr>
+                  	  <th>ID</th>
                       <th>Movie Name</th>
-                      <th>Time</th>
-                      <th>Date</th>
+                      <th>Movie Length</th>
                   </tr>
 		
-				<c:forEach items = "${bean.movieList}" var = "mov">
+				<c:forEach items = "${mov.movieList}" var = "mov">
                   <tr>
-                      <td>"${mov.movieName}"</td>
-                      <td>"${mov.time}"</td>
-                      <td>"${mov.date}"</td>
+                      <td>${mov.id}</td>
+                      <td>${mov.movieName}</td>
+                      <td>${mov.length}</td>
                       <td>
                           <form action = "adminMovie" method = "GET">
-                              <button type="submit" name = "edit" id = "${mov.movieName}"> Edit </button><br>
-                              <button type="submit" name = "remove" id = "${mov.movieName}"> Remove </button><br>
+                              <button type="submit" name = "edit" value = "${mov.id}"> Edit </button><br>
+                              <button type="submit" name = "remove" value = "${mov.id}"> Remove </button><br>
                             </form>
                       </td>
                     </tr>

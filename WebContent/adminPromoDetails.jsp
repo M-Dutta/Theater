@@ -1,4 +1,4 @@
-<%@ page contentType = "text/html;charset=UTF-8" %>
+<%@ page contentType = "text/html;charset=UTF-8" import = "beanies.*" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 <html lang="en">
@@ -16,7 +16,7 @@
     </head>
 
     <body>
-    <jsp:useBean id = "bean" class = "beanies.PromoList" scope = "session"></jsp:useBean>
+    <jsp:useBean id = "pro" class = "beanies.PromoList" scope = "request"></jsp:useBean>
 
       <div class="navbar">
         <a style = "float:left" href = "homepage.html"> Home </a>
@@ -46,15 +46,15 @@
                     <th>End Date</th>
                 </tr>
 				
-				<c:forEach items = "${bean.promoList}" var = "promo">
+				<c:forEach items = "${pro.promoList}" var = "promo">
                 <tr>
-                    <td> "{promo.promo}"</td>
-                    <td> "{promo.discount}"</td>
-                    <td> "{promo.date}"</td>
+                    <td> ${promo.promo}</td>
+                    <td> ${promo.discount}</td>
+                    <td> ${promo.date}</td>
                     <td>
                         <form action="adminPromo" method="GET">
-                            <button type="submit" name = "edit" id = "{promo.promo}"> Edit </button><br>
-                            <button type="submit" name = "remove" id = "{promo.promo}"> Remove </button><br>
+                            <button type="submit" name = "edit" value = "${promo.promo}"> Edit </button><br>
+                            <button type="submit" name = "remove" value = "${promo.promo}"> Remove </button><br>
                         </form>
                     </td>
                 </tr>

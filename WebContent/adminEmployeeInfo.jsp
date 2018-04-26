@@ -1,6 +1,5 @@
-<%@ page contentType = "text/html;charset=UTF-8" %>
+<%@ page contentType = "text/html;charset=UTF-8" import = "beanies.*" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-
 <html lang="en">
     <head>
         <!-- meta tag -->
@@ -13,11 +12,10 @@
         <link rel="icon" type="image/png" href="img/cinema.png">
         <title>Theater</title>
 
-
     </head>
 
     <body>
-    <jsp:useBean id = "bean" class = "beanies.EmployeeList" scope = "session"></jsp:useBean>
+    <jsp:useBean id = "emp" class = "beanies.EmployeeList" scope = "request"></jsp:useBean>
       
       <div class="navbar">
         <a style = "float:left" href = "homepage.html"> Home </a>
@@ -45,17 +43,19 @@
                     <th>Id</th>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Designation</th>
                 </tr>
 
-				<c:forEach items = "${bean.employeeList}" var = "emp">
+				<c:forEach items = "${emp.employeeList}" var = "emp">
                 <tr>
-                    <td>"${emp.id}"</td>
-                    <td>"${emp.firstName}"</td>
-                    <td>"${emp.lastName}"</td>
+                    <td>${emp.id}</td>
+                    <td>${emp.firstName}</td>
+                    <td>${emp.lastName}</td>
+                    <td>${emp.designation}</td>
                     <td>
                         <form action = "adminEmployee" method = "GET">
-                            <button type="submit" name = "edit" id = "${emp.id}" >Edit</button><br>
-                            <button type="submit" name = "remove"  id = "${emp.id}">Remove</button><br>
+                            <button type="submit" name = "edit" value = "${emp.id}" >Edit</button><br>
+                            <button type="submit" name = "remove"  value = "${emp.id}">Remove</button><br>
                         </form>
                     </td>
                 </tr>
