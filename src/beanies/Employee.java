@@ -44,7 +44,10 @@ public class Employee {
 	{
 		this.lName = string;
 	}
-	
+	public void setDesignation(String string)
+	{
+		this.designation = string;
+	}
 	
 	public void setId(int num)
 	{
@@ -61,6 +64,10 @@ public class Employee {
 		return this.lName;
 	}
 	
+	public String getDesignation()
+	{
+		return this.designation;
+	}
 	public int getId()
 	{
 		return this.id;
@@ -68,8 +75,8 @@ public class Employee {
 	
 	public void getEmployee(Statement s, int id) {
 		try {
-			ResultSet r = s.executeQuery("SELECT * from users WHERE id="+l+id+l);
-			
+			ResultSet r = s.executeQuery("SELECT * from employee WHERE id="+l+id+l);
+			r.next();
 		        this.id= r.getInt(1);
 		        this.ssn = r.getInt(2);
 		        this.fName =  r.getString(3);
@@ -83,7 +90,7 @@ public class Employee {
 			}
 		
 			catch (SQLException e) {
-			System.out.println("savePayment "+ e);
+			System.out.println("Employee Bean Employee "+ e);
 			}
 			
 			

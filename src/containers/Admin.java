@@ -2,6 +2,7 @@ package containers;
 import java.sql.ResultSet; 
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
 
 public class Admin extends Utilities{
 	public int adminId;
@@ -75,7 +76,12 @@ public class Admin extends Utilities{
 	public void changeUserInfo(Statement s,String userEmail,String field,String info, int n) {
 		User u = new User();
 		u.getUser(s,userEmail);
-		u.changeInfo(s, field, info, n);
+		try {
+			u.changeInfo(s, field, info, n);
+		} catch (ParseException e) {
+			
+			System.out.println("Admin ChangeUserInfo");;
+		}
 		
 		
 	}
@@ -133,22 +139,22 @@ public class Admin extends Utilities{
 		
 	}
 	
-	public void addMovie(Statement s,Movie_info movie){
+	public void addMovie(Statement s,Movie movie){
 		movie.add(s);
 	
 	}
-	
+	/*
 	public void changeMovieInfo(Statement s, Movie_info m,String field, String info,int n ) {
 		m.edit( s, field, info, n);
 	}
-	
+	*/
 	public void removeMovie(Statement s,Movie_info movie) {
 		movie.remove(s);
 	}
 	
 	public void removeUser(Statement s,User registeredUser) {
 		try {
-			s.executeUpdate("DELETE from user WHERE id email="+l+registeredUser.email+l );
+			s.executeUpdate("DELETE from user WHERE email="+l+registeredUser.email+l );
 			}
 			
 			catch (SQLException e) {

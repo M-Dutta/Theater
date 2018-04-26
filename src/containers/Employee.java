@@ -34,8 +34,8 @@ public class Employee extends Utilities{
 	
 	public void getEmployee(Statement s, int id) {
 		try {
-			ResultSet r = s.executeQuery("SELECT * from users WHERE id="+l+id+l);
-			
+			ResultSet r = s.executeQuery("SELECT * from employee WHERE id="+l+id+l);
+				r.next();
 		        this.id= r.getInt(1);
 		        this.ssn = r.getInt(2);
 		        this.fName =  r.getString(3);
@@ -49,7 +49,7 @@ public class Employee extends Utilities{
 			}
 		
 			catch (SQLException e) {
-			System.out.println("savePayment "+ e);
+			System.out.println("Employee Container "+ e);
 			}
 			
 			
@@ -74,7 +74,7 @@ public class Employee extends Utilities{
 			}
 		else 
 			{
-			s.executeUpdate("Update Users "+ 
+			s.executeUpdate("Update employee "+ 
 				"SET "+field+"="+l+info+l + 
 				"WHERE id="  +l+id+l) ;
 			}

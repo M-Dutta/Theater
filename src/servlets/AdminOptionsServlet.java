@@ -25,23 +25,23 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 	
 	if (request.getParameter("movie") != null)
 	{
-		response.sendRedirect("adminDisplayMovies.html");	
+		response.sendRedirect("adminDisplayMovies.jsp");	
 	}
 	if (request.getParameter("user") != null)
 	{	
-		response.sendRedirect("adminUserDetails.html");	
+		response.sendRedirect("adminUserDetails.jsp");	
 	}
 	if (request.getParameter("employee") != null)
 	{
-		response.sendRedirect("adminEmployeeInfo.html");	
+		response.sendRedirect("adminEmployeeInfo.jsp");	
 	}
 	if (request.getParameter("promo") != null)
 	{
-		response.sendRedirect("adminPromoDetails.html");	
+		response.sendRedirect("adminPromoDetails.jsp");	
 	}
 	if (request.getParameter("reports") != null)
 	{
-		response.sendRedirect("adminReports.html");	
+		response.sendRedirect("adminReports.jsp");	
 	}
 	
 }

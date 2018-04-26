@@ -1,6 +1,7 @@
 package containers;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
 
 public class RegularEmployee extends Utilities {
 	
@@ -23,7 +24,7 @@ public class RegularEmployee extends Utilities {
 		registeredUser.register(s);
 	}
 	
-	public void changeUserInfo(Statement s,String userEmail,String field,String info, int n) {
+	public void changeUserInfo(Statement s,String userEmail,String field,String info, int n) throws ParseException {
 		User u = new User();
 		u.getUser(s,userEmail);
 		u.changeInfo(s, field, info, n);

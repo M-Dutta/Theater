@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import containers.Movie;
+import containers.Movie_info;
 import containers.Utilities;
 
 public class EditMovieServlet extends HttpServlet {
@@ -28,18 +29,36 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 	
 	if (request.getParameter("save") != null)
 	{
+		String id = request.getParameter("Id");
+		String age = request.getParameter("age");
+		String runTime = request.getParameter("runTime");
+		String releaseDate = request.getParameter("releaseDate");
+		String movieName = request.getParameter("movieName");
+		String status = request.getParameter("status");
+		Movie m = new Movie();
+		m.getMovie(Utilities.stmt, Integer.parseInt(id));
+		m.edit(Utilities.stmt, "runtim", runTime, 10);
+		m.edit(Utilities.stmt, "releas", releaseDate, 5);
+		m.edit(Utilities.stmt, "movie_name", movieName, 0);
+		Movie_info m2 = new Movie_info();
+		m2.getMovie(Utilities.stmt, Integer.parseInt(id));
+		m2.editMoive_info(Utilities.stmt, "age", age, 1);
+		m2.editMoive_info(Utilities.stmt, "status", status, 1);
 
+		response.sendRedirect("adminDisplayMovies.jsp");
+		
+		
 	}
 	
 	if (request.getParameter("back") != null)
 	{
-		response.sendRedirect("adminDisplayMovies.html");	
+		response.sendRedirect("adminDisplayMovies.jsp");	
 	}
 	
 	if (request.getParameter("saveNew") != null)
 	{
 		//Here
-		response.sendRedirect("adminDisplayMovies.html");
+		response.sendRedirect("adminDisplayMovies.jsp");
 
 		String id = request.getParameter("Id");
 		String desc = request.getParameter("desc");

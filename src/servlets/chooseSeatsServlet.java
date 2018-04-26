@@ -25,7 +25,7 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 	
 	if (request.getParameter("browse") != null)
 	{
-		response.sendRedirect("homepage.html");	
+		response.sendRedirect("homepage.jsp");	
 	}
 	if (request.getParameter("checkout") != null)
 	{
@@ -36,6 +36,7 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 		request.setAttribute("seat", seatNum);
 		request.setAttribute("type", seatType);
 		request.getRequestDispatcher("checkout.jsp").forward(request, response);
+		
 	}
 }
 }

@@ -25,7 +25,12 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 	
 	if (request.getParameter("logout") != null)
 	{	
-		signInServlet.globaluser.logout(Utilities.stmt);
+		try {
+			signInServlet.globaluser.logout(Utilities.stmt);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			System.out.println("LogoutServlet");
+		}
 		response.sendRedirect("logout.html");	
 	}
 

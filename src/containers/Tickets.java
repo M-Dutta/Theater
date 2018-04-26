@@ -9,6 +9,9 @@ public class Tickets extends Utilities{
 	String l = "'";
 	String L = "','";
 	
+	public void addTicket(Statement s) {
+		
+	}
 	public void selectTicket(Statement s) {
 		//To be implemented
 	}

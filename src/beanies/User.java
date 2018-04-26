@@ -27,6 +27,7 @@ public class User extends Utilities {
 	public String city;
 	public String state;
 	public int zip;
+	public String id;
 	
 	String l= "'"; //Use these to make life easier while formatting
 	String L = "','";
@@ -89,6 +90,11 @@ public class User extends Utilities {
 	public void setEmail(String string)
 	{
 		this.email = string;
+	}
+	
+	public void setId(String string)
+	{
+		this.id = string;
 	}
 	
 	public void setFirstName(String string)

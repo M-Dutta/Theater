@@ -3,6 +3,7 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -58,12 +59,12 @@ public class User extends Utilities {
 		ResultSet r = s.executeQuery("SELECT * from user WHERE email="+l+email+l);
 			r.next();
 	        this.email= r.getString(1);
-	        this.phone = r.getString(2);
-	        this.fName =  r.getString(3);
-	        this.lName=  r.getString(4);
+	        this.fName =  r.getString(2);
+	        this.lName=  r.getString(3);
+	        this.phone= r.getString(4);
 	        this.Password = r.getString(5);
 	        this.birthDate = r.getDate(6);
-		this.emailPref= r.getInt(7);
+	        this.emailPref= r.getInt(7);
 	        this.status = r. getInt(8);
 	        this.street =  r.getString(9);
 		this.city=  r.getString(10);
@@ -120,48 +121,61 @@ public class User extends Utilities {
 	}
 	
 	
-	public void login(Statement s, String  email, String password) {
+	public int login(Statement s, String  email, String password)  {
 		User u = new User();
 		u.getUser( s,  email);
 		if (u.status > 0) 
 		{
 			if (u.Password.equals(Utilities.hasher(password))) {
-				u.changeInfo(Utilities.stmt, "status","2", 1); //Status 2 = logged In // 1 = verified
+				try {
+					u.changeInfo(Utilities.stmt, "status","2", 1);
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					System.out.println("User Login");
+				} //Status 2 = logged In // 1 = verified
 				System.out.println("Logged In");
+				return 2;
 			}
 			else 
 			{
 				System.out.println("NOPE");
+				return 1;
 			}
 		}
 		else {
 			System.out.println("Unverified Email");
+			return 404;
 			
 		}
 	}
 	
-	public void logout(Statement s) {
+	public void logout(Statement s) throws ParseException {
 		this.changeInfo(s, "status", "1", 1);
 		System.out.println("Set User Status " + this.email  +  " " +this.status+" "  );
 		
 	}
 	//user.changeInfo(s, field,info, n)
-	public void changeInfo(Statement s, String field, String info,int n ) {
+	public void changeInfo(Statement s, String field, String info,int n ) throws ParseException {
 	try {
 	if (n == 0) {
 		s.executeUpdate("Update user "+ 
 			"SET "+field+"="+l+info+l + 
-			"WHERE email="  +l+email+l); 
+			" WHERE email="  +l+email+l); 
 	}
-	else {
+	if (n ==5) {
+		s.executeUpdate("Update user "+ 
+				"SET "+field+"="+l+Utilities.DateConverter(info)+l + 
+				" WHERE email="  +l+email+l); 
+	}
+	if (n==1) {
 		s.executeUpdate("Update user "+ 
 			"SET "+field+"="+l+Integer.parseInt(info)+l + 
-			"WHERE email="  +l+email+l) ;
+			" WHERE email="  +l+email+l) ;
 		System.out.println("Print Info "+ info);
 	}
 	}
 	catch (SQLException e) {
-		System.out.println("Change INfo "+ e);
+		System.out.println("Change Info "+ e);
 	}
 	}
 	//user.ChangePassword(s, passwd)

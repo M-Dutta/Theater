@@ -49,7 +49,18 @@ public class UserList extends Utilities implements Serializable {
 				lName = lNameRs.getString(1);
 			}
 			
+			//get id name
+			PreparedStatement stmt4 = Utilities.con.prepareStatement("SELECT id from user WHERE email=?");
+			stmt4.setString(1, email);
+			ResultSet rid = stmt4.executeQuery();
+			String id = "";
+			if (rid.next())
+			{
+				id = rid.getString(1);
+			}
+			
 			User user = new User();
+			user.setId(id);
 			user.setEmail(email);
 			user.setFirstName(fName);
 			user.setLastName(lName);

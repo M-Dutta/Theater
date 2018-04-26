@@ -36,10 +36,15 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 		response.sendRedirect("verifyEmail.html");
 	}
 	else {
-	nU.login(Utilities.stmt, email, password);
-	globaluser = nU;
+	int res  =nU.login(Utilities.stmt, email, password);
 	System.out.println("Sign-In");
+	if (res ==2) {
+	globaluser = nU;
 	response.sendRedirect("homepage.html"); ////////THIS <======
+	}
+	if (res ==1) {
+	response.sendRedirect("signIn.html");
+	}
 	}
 	
 	}	

@@ -51,7 +51,10 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
     		
     	} catch (SQLException e) {
 		e.printStackTrace();
-    	}
+    	} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 	
 	

@@ -48,14 +48,24 @@ public class EmployeeList extends Utilities implements Serializable {
 			}
 			
 			
+			PreparedStatement stmt4 = Utilities.con.prepareStatement("SELECT designation from employee WHERE id=?");
+			stmt4.setInt(1, id);
+			ResultSet ldesignationRs = stmt4.executeQuery();
+			String ldesignation = "";
+			if (ldesignationRs.next())
+			{
+				ldesignation = ldesignationRs.getString(1);
+			}
+			
 			Employee employee = new Employee();
 			employee.setId(id);
 			employee.setFirstName(fName);
 			employee.setLastName(lName);
+			employee.setDesignation(ldesignation);
 			
 			EmployeeList.add(employee);
 		}
-		
+		System.out.println(EmployeeList);
 		return EmployeeList;
 	}
 }

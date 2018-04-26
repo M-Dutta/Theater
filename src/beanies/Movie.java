@@ -7,18 +7,18 @@ import java.sql.Time;
 import java.util.ArrayList;
 
 public class Movie {
-	String l = "'";
-	String L = "','";
-	String movie_name;
-	Time runtim;
-	String trailer_picture;
-	int id;
-	String movie_id;
-	String description;
-	String genre;
-	int rating;
-	ArrayList<String> showtimes = new ArrayList<String>();
-	Date releas;
+	public String l = "'";
+	public String L = "','";
+	public String movie_name;
+	public Time runtim;
+	public String trailer_picture;
+	public int id;
+	public String movie_id;
+	public String description;
+	public String genre;
+	public int rating;
+	public ArrayList<String> showtimes = new ArrayList<String>();
+	public Date releas;
 	
 	
 	
@@ -178,4 +178,3 @@ public class Movie {
 		
 	}
 }
-

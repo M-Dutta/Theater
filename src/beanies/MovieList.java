@@ -1,5 +1,5 @@
 package beanies;
-import containers.Movie_info;
+import containers.Movie_info; 
 import containers.Utilities;
 import java.io.Serializable;
 import java.sql.Connection;
@@ -116,7 +116,7 @@ public class MovieList extends Utilities implements Serializable {
 			mov.setGenre(gen);
 			mov.setRating(rat);
 			mov.setShowtimeList(showtimeList);
-			
+			System.out.println(mov.movie_name);
 			MovieList.add(mov);
 		}
 		

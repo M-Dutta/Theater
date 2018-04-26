@@ -29,20 +29,35 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
         throws IOException, ServletException {
 	
 	response.setContentType("text/html; charset=UTF-8");
-	
+	String originalEmail = request.getParameter("Email");
+	User u = new User();
+	u.getUser(Utilities.stmt,originalEmail);
 	if (request.getParameter("save") != null)
 	{
-
+		String id = request.getParameter("id");
+		String email = request.getParameter("Email");
+		String FirstName = request.getParameter("FirstName");
+		String LastName = request.getParameter("LastName");
+		String date = request.getParameter("Date");
+		try {
+			u.changeInfo(Utilities.stmt,"fname" , FirstName, 0);
+			u.changeInfo(Utilities.stmt,"lname" , LastName, 0);
+			u.changeInfo(Utilities.stmt,"email" , email, 0); // 1 means INT value
+			u.changeInfo(Utilities.stmt,"birthdate" , date, 5); // 5 means Date
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		response.sendRedirect("adminUserDetails.jsp");
 	}
 	
 	if (request.getParameter("back") != null)
 	{
-		response.sendRedirect("adminUserDetails.html");	
+		response.sendRedirect("adminUserDetails.jsp");	
 	}
 	
 	if (request.getParameter("saveNew") != null)
 	{
-		response.sendRedirect("adminUserDetails.html");
 		String email = request.getParameter("Email");
 		String FirstName = request.getParameter("FirstName");
 		String LastName = request.getParameter("LastName");
@@ -53,6 +68,7 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 			User nU = new User( email, Password, FirstName, LastName, "phone",Utilities.DateConverter(date) ,0, 0, "Blank", "Blank","Blank",0);
 			nU.register(Utilities.stmt);
 			System.out.println("Email: "+nU.email); 
+			response.sendRedirect("adminUserDetails.jsp");
 			} 
 		catch (ParseException e)
 			{

@@ -25,7 +25,7 @@ public void doGet(HttpServletRequest request, HttpServletResponse response)
 	
 	if (request.getParameter("browse") != null)
 	{
-		response.sendRedirect("homepage.html");	
+		response.sendRedirect("homepage.jsp");	
 	}
 	if (request.getParameter("profile") != null)
 	{

@@ -2,6 +2,7 @@ package containers;
 import java.sql.ResultSet;   
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
 
 public class Manager extends Utilities{
 
@@ -94,7 +95,12 @@ public class Manager extends Utilities{
 	public void changeUserInfo(Statement s,String userEmail,String field,String info, int n) {
 		User u = new User();
 		u.getUser(s,userEmail);
-		u.changeInfo(s, field, info, n);
+		try {
+			u.changeInfo(s, field, info, n);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Manager Change USer Info");
+		}
 		
 		
 	}

@@ -1,7 +1,9 @@
 package containers;
-import java.sql.Date; 
+import java.sql.Date;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
 
 public class PromoCode extends Utilities {
 	public String promo_code;
@@ -26,9 +28,36 @@ public class PromoCode extends Utilities {
 			System.out.println(this.discount_percent);
 			s.executeUpdate("INSERT into promo_code values("+l+this.promo_code+L+this.discount_percent+L+this.exp_date+l+")");
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println("addPromoCode"+e);
 		}
-		
 	}
+		public void getPromoCode(Statement s, String promo_code) {
+			try {
+				ResultSet r =s.executeQuery("Select * from promo_code where promo_code = '"+promo_code+"'" );
+				r.next();
+				this.promo_code = r.getString(1);
+				this.discount_percent = r.getDouble(2);
+				this.exp_date = Utilities.DateConverter(r.getString(3));
+			} catch (SQLException | ParseException e) {
+				System.out.println("getPromoCode   "+e);
+			}	
+		}
+			public void removePromoCode(Statement s) {	
+				try {
+					s.executeUpdate("Delete from promo_code where promo_code = '"+this.promo_code+"'" );
+				} catch (SQLException e) {
+					System.out.println("deletePromo"+e);
+					e.printStackTrace();
+				}
+	}
+			public void changePromoCode(Statement s, PromoCode p) {
+				try {
+					s.executeUpdate("Update promo_code set discount_percent ="+l+
+							this.discount_percent+"',exp_date='"+this.exp_date+"' where promo_code ='"+p.promo_code+"'");
+				} catch (SQLException e) {
+					System.out.println("changePromoCode"+e);
+				}	
+
+			}
 }
 
